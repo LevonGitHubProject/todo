@@ -1,0 +1,21 @@
+<div class="root">
+  <div id="myDIV" class="header">
+    <h2>My To Do List</h2>
+    <input (keyup)="setInputValue($event.target.value)" type="text" id="myInput" placeholder="Title..."
+      [value]="inputText" (keydown.enter)="createElement($event)">
+    <span (click)="createElement($event)" class="addBtn">Add</span>
+  </div>
+  <div class="seen">
+    <button class="button-seen" (click)="showTodoList()">{{buttonValueText}}</button>
+  </div>
+  <div *ngIf="showList ; else todoList">
+    <p class="todo-text">{{todoListText}}</p>
+  </div>
+  <ng-template #todoList>
+    <ul id="myUL" *ngFor="let listItem of lists" (click)="itemChecked(listItem)">
+      <li [class]="listItem.checkState ? checkingClass : checkedClass">{{listItem.item | uppercase}}
+        <button *ngIf="!listItem.checkState" (click)="deleteElement(listItem)" class="close">x</button>
+      </li>
+    </ul>
+  </ng-template>
+</div>

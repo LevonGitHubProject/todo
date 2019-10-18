@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+ul {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+}
+
+ul:nth-child(even) {
+  background: #ddd;
+}
+
+ul:hover {
+  background: #c6c2c2;
+}
+
+.checked {
+  color: red;
+  text-decoration: line-through;
+  font-size: 20px;
+}
+
+.checking {
+  color: darkgreen;
+  font-size: 20px;
+}
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: darkgreen;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 7px;
+  transform: rotate(45deg);
+  height: 20px;
+  width: 12px;
+  margin-left: 7px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 9px 7px 9px;
+  border-radius: 15px;
+  margin: 9px 5px 0 0;
+  border: none;
+  color: white;
+  background-color: grey;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.header {
+  background-color: red;
+  padding: 10px 30px;
+  color: white;
+  text-align: center;
+}
+
+.header:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: grey;
+  color: white;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: darkgreen;
+}
+
+.seen {
+  text-align: center;
+  background-color: red;
+  padding-bottom: 25px;
+}
+
+.button-seen {
+  width: 150px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: grey;
+}
+
+.button-seen:hover {
+  background-color: darkgray;
+}
+
+.root {
+  border: 2px solid black;
+  width: 500px;
+}
+
+.todo-text {
+  font-size: 25 px;
+  margin: 15px;
+}
